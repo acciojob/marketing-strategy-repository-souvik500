@@ -26,10 +26,17 @@ public class MarketingStrategyManager {
 
     public void updateStrategy(MarketingStrategy updatedStrategy) {
     	//your code goes here
+        for (int i = 0; i < strategies.size(); i++) {
+            if (strategies.get(i).getName().equals(updatedStrategy.getName())) {
+                strategies.set(i, updatedStrategy); // Update existing strategy
+                return;
+            }
+        }
     }
 
     public void deleteStrategy(String name) {
     	//your code goes here
+        strategies.removeIf(strategy -> strategy.getName().equals(name));
     }
 
     public List<MarketingStrategy> getStrategiesInBudgetRange(double minBudget, double maxBudget) {
