@@ -13,6 +13,7 @@ public class MarketingStrategyManager {
 
     public void createStrategy(MarketingStrategy strategy) {
     	//your code goes here
+         strategies.add(strategy);
     }
 
     public MarketingStrategy getStrategyByName(String name) {
